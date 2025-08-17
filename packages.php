@@ -1,4 +1,4 @@
-<section class="page-section bg-dark" id="home">
+<section class="page-section bg-#fff" id="home">
 	<div class="container">
 		<h2 class="text-center">Tour Packages</h2>
 	<div class="d-flex w-100 justify-content-center">

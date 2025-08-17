@@ -59,22 +59,59 @@
   })
 </script>
 <!-- Footer-->
-<footer class="footer py-4">
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-lg-4 text-lg-start">Copyright &copy; <?php echo $_settings->info('short_name') ?> 2021</div>
-			<div class="col-lg-4 my-3 my-lg-0">
-				<a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-				<a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-				<a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<div class="col-lg-4 text-lg-end">
-				<a class="link-dark text-decoration-none me-3" href="javascript:void(0)" id="p_use">Privacy Policy</a>
-        <span>Developed By: <a href="https://1sourcecodr.blogspot.com/">oretnom23</a></span>
-			</div>
-		</div>
-	</div>
+<!-- Modern Footer -->
+<footer style="background:#121f4d; color:white; padding:50px 0; font-family:'Poppins', sans-serif;">
+  <div style="max-width:1200px; margin:0 auto; padding:0 20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;">
+    
+    <!-- About Section -->
+    <div>
+      <h3 style="color:#60B5FF; font-size:20px; margin-bottom:15px;">GlobalTrip</h3>
+      <p style="line-height:1.8; font-size:14px;">
+        GlobalTrip is your trusted tour booking system, making travel planning simple, secure, and enjoyable. 
+        Explore the world with ease and confidence.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 style="color:#60B5FF; font-size:20px; margin-bottom:15px;">Quick Links</h3>
+      <ul style="list-style:none; padding:0; font-size:14px; line-height:2;">
+        <li><a href="index.php" style="color:#ddd; text-decoration:none;">Home</a></li>
+        <li><a href="about.php" style="color:#ddd; text-decoration:none;">About Us</a></li>
+        <li><a href="tours.php" style="color:#ddd; text-decoration:none;">Tours</a></li>
+        <li><a href="contact.php" style="color:#ddd; text-decoration:none;">Contact</a></li>
+        <li><a href="javascript:void(0)" id="p_use" style="color:#ddd; text-decoration:none;">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h3 style="color:#60B5FF; font-size:20px; margin-bottom:15px;">Contact Us</h3>
+      <p style="font-size:14px; line-height:1.8;">
+        📍 Surat, Gujarat <br>
+        📞 +91 98765 43210 <br>
+        ✉ support@globaltrip.com
+      </p>
+    </div>
+
+    <!-- Social Media -->
+    <div>
+      <h3 style="color:#60B5FF; font-size:20px; margin-bottom:15px;">Follow Us</h3>
+      <div style="display:flex; gap:15px;">
+        <a href="#!" style="color:white; font-size:18px;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#!" style="color:white; font-size:18px;"><i class="fab fa-twitter"></i></a>
+        <a href="#!" style="color:white; font-size:18px;"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#!" style="color:white; font-size:18px;"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div style="text-align:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.2); font-size:14px; color:#fff; ">
+    Copyright © <?php echo date("Y"); ?>  GlobalTrip All rights reserved.
+  </div>
 </footer>
+
 
    
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->

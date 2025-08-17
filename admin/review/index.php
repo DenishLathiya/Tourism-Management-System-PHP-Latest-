@@ -33,31 +33,49 @@
             </thead>
             <tbody>
                 <?php 
-                $i=1;
-                    $qry = $conn->query("SELECT r.*,concat(u.firstname,' ',u.lastname) as name, p.title FROM `rate_review` r inner join users u on .u.id = r.user_id inner join `packages` p on p.id = r.package_id order by unix_timestamp(r.date_created) desc ");
-                    while($row= $qry->fetch_assoc()):
-                        $row['review'] = strip_tags(stripslashes(html_entity_decode($row['review'])));
-                ?>
-                    <tr>
-                        <td><?php echo $i++ ?></td>
-                        <td><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td>
-                        <td>
-                            <p class="m-0"><b>User:</b> <?php echo  ucwords($row['name']) ?></p>
-                            <p class="m-0"><b>Package:</b> <?php echo  ucwords($row['title']) ?></p>
-                        </td>
-                        <td><p class="truncate-1 m-0"><?php echo $row['rate'] ?></p></td>
-                        <td><p class="truncate-1 m-0" title="<?php echo $row['review'] ?>"><?php echo $row['review'] ?></p></td>
-                        <td align="center">
-                                <button type="button" class="btn btn-flat btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
-                                    Action
-                                <span class="sr-only">Toggle Dropdown</span>
-                                </button>
-                                <div class="dropdown-menu" role="menu">
-                                <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
-                                </div>
-                        </td>
-                    </tr>
-                <?php endwhile; ?>
+$i=1;
+$sql = "
+    SELECT r.*,
+           CONCAT(u.firstname, ' ', u.lastname) AS name,
+           p.title 
+    FROM `rate_review` r 
+    INNER JOIN `users` u ON u.id = r.user_id 
+    INNER JOIN `packages` p ON p.id = r.package_id 
+    ORDER BY UNIX_TIMESTAMP(r.date_created) DESC
+";
+
+$qry = $conn->query($sql);
+
+if(!$qry){
+    die("Query Failed: " . $conn->error . "<br>SQL: " . $sql);
+}
+
+while($row = $qry->fetch_assoc()):
+    $row['review'] = strip_tags(stripslashes(html_entity_decode($row['review'])));
+?>
+    <tr>
+        <td><?php echo $i++ ?></td>
+        <td><?php echo date("Y-m-d H:i", strtotime($row['date_created'])) ?></td>
+        <td>
+            <p class="m-0"><b>User:</b> <?php echo ucwords($row['name']) ?></p>
+            <p class="m-0"><b>Package:</b> <?php echo ucwords($row['title']) ?></p>
+        </td>
+        <td><p class="truncate-1 m-0"><?php echo $row['rate'] ?></p></td>
+        <td><p class="truncate-1 m-0" title="<?php echo $row['review'] ?>"><?php echo $row['review'] ?></p></td>
+        <td align="center">
+            <button type="button" class="btn btn-flat btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                Action
+            <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu" role="menu">
+                <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">
+                    <span class="fa fa-trash text-danger"></span> Delete
+                </a>
+            </div>
+        </td>
+    </tr>
+<?php endwhile; ?>
+
             </tbody>
         </table>
 		</div>
