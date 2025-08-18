@@ -1,6 +1,5 @@
-    
-</section>
-<section class="page-section">
+
+<section class="page-section"  style="background: linear-gradient(135deg, #e3f0ff 0%, #f8fafc 100%); min-height:100vh;">
     <div class="container">
     <div class="w-100 justify-content-between d-flex">
         <h4><b>Booked Packages</b></h4>
