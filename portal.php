@@ -151,7 +151,7 @@ header.masthead .container {
 </section>
 
 <!-- About -->
-<section class="page-section" id="about">
+<section class="page-section" id="about" style="background: linear-gradient(135deg, #e3f0ff 0%, #f8fafc 100%); min-height:100vh;">
 	<div class="container">
 		<div class="text-center mb-4">
 			<h2 class="section-heading text-uppercase">About Us</h2>

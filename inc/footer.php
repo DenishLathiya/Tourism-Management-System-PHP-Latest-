@@ -107,7 +107,7 @@
   </div>
 
   <!-- Bottom Bar -->
-  <div style="text-align:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.2); font-size:14px; color:#fff; ">
+  <div style="text-align:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.2); font-size:16px; color:#fff; font-weight: bold">
     Copyright © <?php echo date("Y"); ?>  GlobalTrip All rights reserved.
   </div>
 </footer>
