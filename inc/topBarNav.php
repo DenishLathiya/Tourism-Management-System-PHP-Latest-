@@ -35,6 +35,7 @@
   box-shadow: var(--nav-shadow);
   padding-block: 0.5rem;
   padding-inline: 1.5rem;
+  font-size: 40px;
 }
 
 .navbar-brand {
@@ -105,6 +106,7 @@
   .navbar-nav {
     flex-direction: column;
     gap: 0.25em;
+    font-size: 20px;
     align-items: flex-start;
   }
   .navbar-brand {
@@ -118,7 +120,7 @@
 </style>
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="mainNav">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="#page-top">
+    <a class="navbar-brand fw-bold" href="<?php echo $page !='home' ? './':''  ?>">
       <h1 class="title">
         Global<span class="highlight">Trip</span>
       </h1>
@@ -127,7 +129,7 @@
       <span>Menu</span> <i class="fas fa-bars ms-1"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+      <ul class="navbar-nav ms-auto py-4 py-lg-0">
         <li class="nav-item"><a class="nav-link" href="<?php echo $page !='home' ? './':''  ?>">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="./?page=packages">Packages</a></li>
         <li class="nav-item"><a class="nav-link" href="<?php echo $page !='home' ? './':''  ?>#about">About</a></li>
