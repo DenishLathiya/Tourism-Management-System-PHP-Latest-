@@ -7,7 +7,7 @@
   --nav-link: #ffffff;
   --nav-link-hover: #60B5FF;
   --nav-link-active: #ffc107;
-  --nav-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  --nav-shadow: 0 10px 20px rgba(0,0,0,0.15);
   --nav-title-size: 1.5rem;
   --nav-title-weight: 500;
   --nav-title-color: #fff;

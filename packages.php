@@ -31,7 +31,7 @@
             <div class="card-body p-4 d-flex flex-column">
               <h5 class="card-title fw-bold text-dark mb-2" style="font-size:1.3rem;"><?php echo $row['title'] ?></h5>
               
-              <!-- Rating -->
+              <!-- Rating --> 
               <div class="d-flex align-items-center mb-3">
                 <div class="stars stars-small" style="font-size:1.2rem; color:#ffc800;">
                   <?php for($i=5;$i>=1;$i--): ?>
