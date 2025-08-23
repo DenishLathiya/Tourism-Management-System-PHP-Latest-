@@ -71,32 +71,45 @@
 	</div>
 </div>
 <script>
+	
+	
+function _conf(message, callback, params = []) {
+  if (confirm(message)) {
+    if (typeof window[callback] === "function") {
+      window[callback](...params);
+    }
+  }
+}
+
+
 	$(document).ready(function(){
 		$('.delete_data').click(function(){
 			_conf("Are you sure to delete this package permanently?","delete_package",[$(this).attr('data-id')])
 		})
 		$('.table').dataTable();
 	})
-	function delete_package($id){
-		start_loader();
-		$.ajax({
-			url:_base_url_+"classes/Master.php?f=delete_package",
-			method:"POST",
-			data:{id: $id},
-			dataType:"json",
-			error:err=>{
-				console.log(err)
-				alert_toast("An error occured.",'error');
-				end_loader();
-			},
-			success:function(resp){
-				if(typeof resp== 'object' && resp.status == 'success'){
-					location.reload();
-				}else{
-					alert_toast("An error occured.",'error');
-					end_loader();
-				}
-			}
-		})
-	}
+
+function delete_package(id){
+    start_loader();
+    $.ajax({
+        url: _base_url_ + "classes/Master.php?f=delete_package",
+        method: "POST",
+        data: { id: id },  // ✅ variable id, not $id
+        dataType: "json",
+        error: err => {
+            console.log(err)
+            alert_toast("An error occured.", 'error');
+            end_loader();
+        },
+        success: function(resp){
+            if (typeof resp == 'object' && resp.status == 'success') {
+                location.reload();
+            } else {
+                alert_toast("An error occured.", 'error');
+                end_loader();
+            }
+        }
+    })
+}
+
 </script>
