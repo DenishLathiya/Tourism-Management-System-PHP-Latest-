@@ -16,7 +16,7 @@
 
 .title {
   font-size: var(--nav-title-size);
-  font-weight: var(--nav-title-weight);
+  font-weight: var(--nav-title-weight);                   
   color: var(--nav-title-color);
 
   margin-bottom: 0;
