@@ -135,7 +135,7 @@
         <li class="nav-item"><a class="nav-link" href="<?php echo $page !='home' ? './':''  ?>#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="<?php echo $page !='home' ? './':''  ?>#contact">Contact</a></li>
         <?php if(isset($_SESSION['userdata'])): ?>
-          <li class="nav-item"><a class="nav-link" href="./?page=my_account"><i class="fa fa-user"></i> Hi, <?php echo $_settings->userdata('firstname') ?>!</a></li>
+          <li class="nav-item"><a class="nav-link" href="./?page=booking_report">Booking-Reports</a></li>
           <li class="nav-item"><a class="nav-link" href="logout.php"><i class="fa fa-sign-out-alt"></i></a></li>
         <?php else: ?>
           <li class="nav-item"><a class="nav-link" href="javascript:void(0)" id="login_btn">Login</a></li>

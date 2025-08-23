@@ -75,6 +75,15 @@
 	</div>
 </div>
 <script>
+
+function _conf(message, callback, params = []) {
+  if (confirm(message)) {
+    if (typeof window[callback] === "function") {
+      window[callback](...params);
+    }
+  }
+}
+
 	$(document).ready(function(){
 		$('.delete_data').click(function(){
 			_conf("Are you sure to delete this booking permanently?","delete_booking",[$(this).attr('data-id')])
