@@ -1,6 +1,11 @@
 <?php require_once('../config.php'); ?>
  <!DOCTYPE html>
 <html lang="en" class="" style="height: auto;">
+  <style>
+  .footer {
+  display: none !important;
+}
+</style>
 <?php require_once('inc/header.php') ?>
   <body class="layout-fixed layout-footer-fixed text-sm sidebar-mini control-sidebar-slide-open layout-navbar-fixed text-dark" data-new-gr-c-s-check-loaded="14.991.0" data-gr-ext-installed="" style="height: auto;">
     <div class="wrapper">
@@ -103,6 +108,9 @@
   </div>
       </div>
       <!-- /.content-wrapper -->
-      <?php require_once('inc/footer.php') ?>
+      <div class="footer">
+   <?php require_once('inc/footer.php') ?> 
+</div>
+
   </body>
 </html>
