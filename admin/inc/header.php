@@ -5,8 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  	<title>GlobalTrip</title>
-    <link rel="icon" href="<?php echo validate_image($_settings->info('logo')) ?>" />
+  	 <title>GlobalTrip</title>
+    <!--<link rel="icon" href="<?php echo validate_image($_settings->info('logo')) ?>" /> -->
     <!-- Google Font: Source Sans Pro -->
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback"> -->
     <!-- Font Awesome -->
@@ -40,7 +40,33 @@
     <style type="text/css">/* Chart.js */
       @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
     </style>
+    <script>
+      function uni_modal(title, url, size = "") {
+    start_loader();
+    $.ajax({
+        url: url,
+        error: err => {
+            console.log(err);
+            alert("An error occurred");
+            end_loader();
+        },
+        success: function(resp) {
+            if(resp){
+                $('#uni_modal .modal-title').html(title);
+                $('#uni_modal .modal-body').html(resp);
+                if(size != ''){
+                    $('#uni_modal .modal-dialog').addClass(size);
+                }else{
+                    $('#uni_modal .modal-dialog').removeAttr("class").addClass("modal-dialog modal-md");
+                }
+                $('#uni_modal').modal('show');
+                end_loader();
+            }
+        }
+    });
+}
 
+    </script>
      <!-- jQuery -->
     <script src="<?php echo base_url ?>plugins/jquery/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
